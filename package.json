@@ -1,0 +1,14 @@
+{
+  "name": "telegram-hashtag-forward",
+  "version": "1.0.0",
+  "description": "Telegram bot that forwards messages with a given hashtag to a group chat.",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "Damian Jesionek",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.56.0"
+  }
+}

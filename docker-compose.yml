@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  server:
+    image: vspaceone/telegram-hashtag-forward
+    restart: unless-stopped
+    environment: 
+      THF_BOT_TOKEN: 12345
+      THF_HASHTAG: "#Forward"
+      THF_SOURCE_CHAT_ID: 00000
+      THF_TARGET_CHAT_ID: 00001
+      THF_SOURCE_CHAT_MESSAGE: This message has been forwarded
+      THF_TARGET_CHAT_MESSAGE: The message was forwarded!
