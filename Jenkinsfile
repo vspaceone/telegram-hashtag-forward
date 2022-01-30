@@ -4,6 +4,8 @@ pipeline {
         dockerImage = ''
         DOCKER_CREDENTIALS = 'docker-hub-vspaceone'
         DOCKER_IMAGE = 'vspaceone/telegram-hashtag-forward'
+
+        MASTER_STAGE_WEBHOOK = credentials('vspaceone-webhook-thf-bot')
     }
     stages {
         stage('Build image') {
@@ -35,6 +37,14 @@ pipeline {
                         dockerImage.push("develop")
                     }
                 }
+            }
+        }
+        stage('Send master webhooks') {
+            when {
+                expression { env.BRANCH_NAME == 'master' }
+            }
+            steps {
+                sh "curl $MASTER_STAGE_WEBHOOK"
             }
         }
     }
