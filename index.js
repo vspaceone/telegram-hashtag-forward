@@ -22,7 +22,7 @@ bot.on('message', (msg) => {
     if (!areSourceAndTargetSet() && isHelpCommand(msg)) {
         sendConfigHelp(chatId)
         return;
-    } else if (chatId !== sourceChatId){
+    } else if (chatId.toString() !== sourceChatId.toString()){
         console.error("Chat id does not match. \"" + chatId + "\" instead of \"" + sourceChatId + "\".")
         return;
     }
@@ -47,7 +47,7 @@ function preFlightCheck(){
         console.log("No source and no target chat defined.")
     }
     
-    if (areSourceAndTargetSet() && sourceChatId === targetChatId){
+    if (areSourceAndTargetSet() && sourceChatId.toString() === targetChatId.toString()){
         console.log("Source and target can not be equal.")
         process.exit(1)
     }
