@@ -57,7 +57,9 @@ async function sendConfigHelp(chatId){
     let help = `Hello, 
 I'm a forwarding bot but am not configured fully yet.
 Please configure the source and chat ids you want me to work with!
-This chat hat the following id: ${chatId}     
+This chat hat the following id: ${chatId}
+
+Learn more about me here: https://github.com/vspaceone/telegram-hashtag-forward
     `
 
     bot.sendMessage(chatId, help);
@@ -77,6 +79,7 @@ All messages in "${sourceChat.title}" including the hashtag ${hashtag} will be f
 
 I'm not capable of doing more than this currently, but I'm hopefully still useful to you :)
 
+Learn more about me here: https://github.com/vspaceone/telegram-hashtag-forward
     `
 
     bot.sendMessage(chatId, help);
