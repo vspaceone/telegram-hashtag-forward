@@ -23,7 +23,7 @@ bot.on('message', (msg) => {
         sendConfigHelp(chatId)
         return;
     } else if (chatId.toString() !== sourceChatId.toString()){
-        console.error("Chat id does not match. \"" + chatId + "\" instead of \"" + sourceChatId + "\".")
+        //console.error("Chat id does not match. \"" + chatId + "\" instead of \"" + sourceChatId + "\".")
         return;
     }
 
